@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f3ee">
+    <title>닮은 캐릭터 찾기</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <header class="intro">
+        <p class="eyebrow">CHARACTER MATCH</p>
+        <h1>나와 닮은 캐릭터는?</h1>
+        <p class="description">카메라를 켜고 비교하기를 누르면, 그 순간의 사진으로 캐릭터를 찾아요.</p>
+      </header>
+
+      <section class="camera-card" aria-labelledby="camera-title">
+        <h2 id="camera-title">카메라 미리보기</h2>
+        <div class="video-frame">
+          <video id="camera" autoplay muted playsinline aria-label="카메라 미리보기"></video>
+          <div id="camera-placeholder" class="camera-placeholder">
+            <span class="camera-icon" aria-hidden="true">◎</span>
+            <span>카메라를 켜면 미리보기가 여기에 보여요.</span>
+          </div>
+        </div>
+        <div class="actions">
+          <button id="camera-button" class="button button-secondary" type="button">카메라 켜기</button>
+          <button id="compare-button" class="button button-primary" type="button" disabled>비교하기</button>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite">카메라를 켜서 시작해 주세요.</p>
+      </section>
+
+      <section id="results-section" class="results-card" aria-labelledby="results-title" hidden>
+        <div class="results-heading">
+          <div>
+            <p class="eyebrow">YOUR RESULTS</p>
+            <h2 id="results-title">가장 닮은 캐릭터</h2>
+          </div>
+          <!-- 수정: 2026-10-27 16:25 KST - 결과 점수가 상위 3개 참고 사진 평균임을 안내합니다. -->
+          <p class="score-note">사진과 이름은 참고 이미지 기준이에요. 점수는 캐릭터별 상위 3장 평균이며 확률이 아닌 참고값이에요.</p>
+        </div>
+        <ol id="results" class="results-list"></ol>
+      </section>
+
+      <p class="privacy-note">촬영 이미지는 비교 요청에만 사용되며 서버에 저장되지 않습니다.</p>
+      <canvas id="capture" hidden></canvas>
+    </main>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>
