@@ -1,5 +1,5 @@
 ﻿
-#.\.venv\Scripts\python.exe -m uvicorn app:app --host 0.0.0.0 --port 8000
+#터미널.\.venv\Scripts\python.exe -m uvicorn app:app --host 0.0.0.0 --port 8000
 # 닮은 캐릭터 이미지 추천
 
 노트북 카메라로 촬영한 한 장의 사진을 준비된 캐릭터 이미지들과 비교해, 시각적으로 가까운 후보를 보여주는 웹 앱입니다. 첫 시제품은 애니메이션·만화·게임 캐릭터 그림을 대상으로 합니다.
